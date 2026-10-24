@@ -80,7 +80,14 @@ HTML anchor links.
 
 ## Live Demo
 
-Deployment pending.
+The completed SecureSphere Landing Page is deployed
+using GitHub Pages.
+
+[View Live Website](https://tharunsasanka.github.io/OIBSIP/WebDev-L1-LandingPage/)
+
+## Source Code
+
+[View GitHub Repository](https://github.com/tharunsasanka/OIBSIP/tree/main/WebDev-L1-LandingPage)
 
 ## Author
 
