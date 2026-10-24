@@ -101,7 +101,13 @@ completed before final submission.
 
 ## Live Demo
 
-Deployment pending.
+The Personal Portfolio is deployed using GitHub Pages.
+
+[View Live Portfolio](https://tharunsasanka.github.io/OIBSIP/WebDev-L1-PersonalPortfolio/)
+
+## Source Code
+
+[View Task 2 Source Code](https://github.com/tharunsasanka/OIBSIP/tree/main/WebDev-L1-PersonalPortfolio)
 
 ## Source Code
 
