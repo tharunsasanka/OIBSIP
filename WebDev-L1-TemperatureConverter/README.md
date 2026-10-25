@@ -136,7 +136,13 @@ verification:
 
 ## Live Demo
 
-Deployment pending.
+TempConvert is deployed using GitHub Pages.
+
+[View Live Temperature Converter](https://tharunsasanka.github.io/OIBSIP/WebDev-L1-TemperatureConverter/)
+
+## Source Code
+
+[View Task 3 Source Code](https://github.com/tharunsasanka/OIBSIP/tree/main/WebDev-L1-TemperatureConverter)
 
 ## Source Code
 
