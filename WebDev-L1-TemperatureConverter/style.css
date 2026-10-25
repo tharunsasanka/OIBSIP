@@ -1,0 +1,408 @@
+
+/* ==========================================
+   TEMPCONVERT — TEMPERATURE CONVERTER
+   Oasis Infobyte | Level 1 | Task 3
+========================================== */
+
+:root {
+  --bg: #08111f;
+  --surface: #101e31;
+  --surface-light: #172940;
+  --primary: #27dac7;
+  --primary-hover: #68f4e5;
+  --text: #f5f8ff;
+  --muted: #aabbd0;
+  --border: #294058;
+  --error: #ff8e96;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-container {
+  width: min(920px, 92%);
+  margin: 0 auto;
+}
+
+/* Header */
+
+.app-header {
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.header-icon {
+  font-size: 28px;
+}
+
+/* Heading */
+
+.converter-section {
+  padding: 70px 0;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 45px;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-heading h1 {
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+  margin: 18px 0;
+}
+
+.section-heading h1 span {
+  color: var(--primary);
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+/* Converter Form */
+
+.converter-card {
+  max-width: 610px;
+  margin: 0 auto;
+  padding: 38px;
+  background: linear-gradient(
+    145deg,
+    var(--surface),
+    #10283a
+  );
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 24px 65px #00000035;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+  display: block;
+  width: 100%;
+  min-height: 54px;
+  padding: 12px 16px;
+  background: #081827;
+  color: var(--text);
+  border: 1px solid #355068;
+  border-radius: 9px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px #27dac725;
+}
+
+.form-group input::placeholder {
+  color: #7e95ab;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Buttons */
+
+.convert-btn,
+.reset-btn {
+  width: 100%;
+  min-height: 54px;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.convert-btn {
+  background: var(--primary);
+  color: #061722;
+  border: none;
+}
+
+.convert-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.reset-btn {
+  margin-top: 12px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.reset-btn:hover {
+  color: var(--text);
+  border-color: var(--primary);
+}
+
+.error-message {
+  margin-top: 18px;
+  padding: 13px 15px;
+  background: #54252d;
+  border: 1px solid #b04b59;
+  border-radius: 8px;
+  color: #ffe3e5;
+  font-size: 14px;
+}
+
+.error-message[hidden] {
+  display: none;
+}
+
+/* Results */
+
+.results-section {
+  margin-top: 65px;
+}
+
+.results-heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.results-heading h2 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.results-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.result-card {
+  min-width: 0;
+  padding: 28px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.result-label {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.result-card strong {
+  display: block;
+  color: var(--primary);
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-symbol {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Information */
+
+.information-section {
+  margin-top: 85px;
+  padding: 35px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.information-section h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.information-section > p {
+  color: var(--muted);
+}
+
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.formula-card {
+  padding: 22px;
+  border-radius: 10px;
+  background: var(--surface-light);
+}
+
+.formula-card h3 {
+  color: var(--primary);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.formula-card p {
+  color: var(--text);
+  font-size: 15px;
+}
+
+/* Footer */
+
+.app-footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.app-footer p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.app-footer a {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 650px) {
+  .converter-section {
+    padding: 50px 0;
+  }
+
+  .section-heading h1 {
+    letter-spacing: -1px;
+  }
+
+  .converter-card {
+    padding: 25px 20px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .result-card {
+    padding: 20px;
+  }
+
+  .information-section {
+    padding: 25px 20px;
+    margin-top: 60px;
+  }
+
+  .formula-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-container {
+    width: 94%;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .section-heading h1 {
+    font-size: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
